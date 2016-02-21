@@ -9,23 +9,36 @@
 /* Begin PBXBuildFile section */
 		29FDE2F01C7A0DCA002DC7BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE2EF1C7A0DCA002DC7BB /* main.m */; };
 		29FDE2F31C7A0DCA002DC7BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE2F21C7A0DCA002DC7BB /* AppDelegate.m */; };
-		29FDE2F61C7A0DCA002DC7BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE2F51C7A0DCA002DC7BB /* ViewController.m */; };
 		29FDE2F91C7A0DCA002DC7BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FDE2F71C7A0DCA002DC7BB /* Main.storyboard */; };
 		29FDE2FB1C7A0DCA002DC7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FDE2FA1C7A0DCA002DC7BB /* Assets.xcassets */; };
 		29FDE2FE1C7A0DCA002DC7BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FDE2FC1C7A0DCA002DC7BB /* LaunchScreen.storyboard */; };
+		29FDE3071C7A19E1002DC7BB /* AVHUGTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE3061C7A19E1002DC7BB /* AVHUGTableViewController.m */; };
+		29FDE30A1C7A1A16002DC7BB /* AVHUGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE3091C7A1A16002DC7BB /* AVHUGViewController.m */; };
+		29FDE30D1C7A1A5E002DC7BB /* AVHUGAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE30C1C7A1A5E002DC7BB /* AVHUGAPIManager.m */; };
+		29FDE3101C7A251A002DC7BB /* AVHUGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE30F1C7A251A002DC7BB /* AVHUGObject.m */; };
+		824B7813614710F5FB6DE036 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BADA0DDE22C698FF454F2A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		249EECC3C027B7BE951E3E86 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		29FDE2EB1C7A0DCA002DC7BB /* AVHeadsUpGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVHeadsUpGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29FDE2EF1C7A0DCA002DC7BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29FDE2F11C7A0DCA002DC7BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		29FDE2F21C7A0DCA002DC7BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		29FDE2F41C7A0DCA002DC7BB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		29FDE2F51C7A0DCA002DC7BB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		29FDE2F81C7A0DCA002DC7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29FDE2FA1C7A0DCA002DC7BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29FDE2FD1C7A0DCA002DC7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29FDE2FF1C7A0DCA002DC7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29FDE3051C7A19E1002DC7BB /* AVHUGTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGTableViewController.h; sourceTree = "<group>"; };
+		29FDE3061C7A19E1002DC7BB /* AVHUGTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHUGTableViewController.m; sourceTree = "<group>"; };
+		29FDE3081C7A1A16002DC7BB /* AVHUGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGViewController.h; sourceTree = "<group>"; };
+		29FDE3091C7A1A16002DC7BB /* AVHUGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHUGViewController.m; sourceTree = "<group>"; };
+		29FDE30B1C7A1A5E002DC7BB /* AVHUGAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGAPIManager.h; sourceTree = "<group>"; };
+		29FDE30C1C7A1A5E002DC7BB /* AVHUGAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHUGAPIManager.m; sourceTree = "<group>"; };
+		29FDE30E1C7A251A002DC7BB /* AVHUGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGObject.h; sourceTree = "<group>"; };
+		29FDE30F1C7A251A002DC7BB /* AVHUGObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHUGObject.m; sourceTree = "<group>"; };
+		8271234C37A5A8BD581BA87F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E9BADA0DDE22C698FF454F2A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824B7813614710F5FB6DE036 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +58,8 @@
 			children = (
 				29FDE2ED1C7A0DCA002DC7BB /* AVHeadsUpGame */,
 				29FDE2EC1C7A0DCA002DC7BB /* Products */,
+				D52553D7BCC6715454CC46A6 /* Pods */,
+				4CA92E2A51A675072FBDE85A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +74,17 @@
 		29FDE2ED1C7A0DCA002DC7BB /* AVHeadsUpGame */ = {
 			isa = PBXGroup;
 			children = (
+				29FDE2F71C7A0DCA002DC7BB /* Main.storyboard */,
 				29FDE2F11C7A0DCA002DC7BB /* AppDelegate.h */,
 				29FDE2F21C7A0DCA002DC7BB /* AppDelegate.m */,
-				29FDE2F41C7A0DCA002DC7BB /* ViewController.h */,
-				29FDE2F51C7A0DCA002DC7BB /* ViewController.m */,
-				29FDE2F71C7A0DCA002DC7BB /* Main.storyboard */,
+				29FDE30E1C7A251A002DC7BB /* AVHUGObject.h */,
+				29FDE30F1C7A251A002DC7BB /* AVHUGObject.m */,
+				29FDE30B1C7A1A5E002DC7BB /* AVHUGAPIManager.h */,
+				29FDE30C1C7A1A5E002DC7BB /* AVHUGAPIManager.m */,
+				29FDE3051C7A19E1002DC7BB /* AVHUGTableViewController.h */,
+				29FDE3061C7A19E1002DC7BB /* AVHUGTableViewController.m */,
+				29FDE3081C7A1A16002DC7BB /* AVHUGViewController.h */,
+				29FDE3091C7A1A16002DC7BB /* AVHUGViewController.m */,
 				29FDE2FA1C7A0DCA002DC7BB /* Assets.xcassets */,
 				29FDE2FC1C7A0DCA002DC7BB /* LaunchScreen.storyboard */,
 				29FDE2FF1C7A0DCA002DC7BB /* Info.plist */,
@@ -79,6 +101,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4CA92E2A51A675072FBDE85A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9BADA0DDE22C698FF454F2A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D52553D7BCC6715454CC46A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8271234C37A5A8BD581BA87F /* Pods.debug.xcconfig */,
+				249EECC3C027B7BE951E3E86 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29FDE3021C7A0DCA002DC7BB /* Build configuration list for PBXNativeTarget "AVHeadsUpGame" */;
 			buildPhases = (
+				FA2B61197F65046D9C7ECE2D /* Check Pods Manifest.lock */,
 				29FDE2E71C7A0DCA002DC7BB /* Sources */,
 				29FDE2E81C7A0DCA002DC7BB /* Frameworks */,
 				29FDE2E91C7A0DCA002DC7BB /* Resources */,
+				24DE473CF8AB649C8179DB7C /* Embed Pods Frameworks */,
+				6C098892582B9414587572ED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,14 +186,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24DE473CF8AB649C8179DB7C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C098892582B9414587572ED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA2B61197F65046D9C7ECE2D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		29FDE2E71C7A0DCA002DC7BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29FDE2F61C7A0DCA002DC7BB /* ViewController.m in Sources */,
 				29FDE2F31C7A0DCA002DC7BB /* AppDelegate.m in Sources */,
+				29FDE30D1C7A1A5E002DC7BB /* AVHUGAPIManager.m in Sources */,
+				29FDE3101C7A251A002DC7BB /* AVHUGObject.m in Sources */,
 				29FDE2F01C7A0DCA002DC7BB /* main.m in Sources */,
+				29FDE30A1C7A1A16002DC7BB /* AVHUGViewController.m in Sources */,
+				29FDE3071C7A19E1002DC7BB /* AVHUGTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +352,7 @@
 		};
 		29FDE3031C7A0DCA002DC7BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8271234C37A5A8BD581BA87F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AVHeadsUpGame/Info.plist;
@@ -270,6 +364,7 @@
 		};
 		29FDE3041C7A0DCA002DC7BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 249EECC3C027B7BE951E3E86 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AVHeadsUpGame/Info.plist;
@@ -298,6 +393,7 @@
 				29FDE3041C7A0DCA002DC7BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
