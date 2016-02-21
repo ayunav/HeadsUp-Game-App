@@ -1,5 +1,5 @@
 //
-//  AVHUGViewController.h
+//  AVHUGCategoriesTableViewController.h
 //  AVHeadsUpGame
 //
 //  Created by Ayuna Vogel on 2/21/16.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AVHUGViewController : UIViewController
+#import "AVHUGObject.h"
 
-@property (nonatomic) NSDictionary *category; 
+@interface AVHUGCategoriesTableViewController : UITableViewController
 
 @end

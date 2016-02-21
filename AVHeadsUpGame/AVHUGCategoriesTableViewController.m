@@ -1,17 +1,17 @@
 //
-//  AVHUGTableViewController.m
+//  AVHUGCategoriesTableViewController.m
 //  AVHeadsUpGame
 //
 //  Created by Ayuna Vogel on 2/21/16.
 //  Copyright © 2016 Ayuna Vogel. All rights reserved.
 //
 
-#import "AVHUGTableViewController.h"
-#import "AVHUGViewController.h"
+#import "AVHUGCategoriesTableViewController.h"
+#import "AVHUGCluesViewController.h"
 #import "AVHUGAPIManager.h"
 
 
-@interface AVHUGTableViewController ()
+@interface AVHUGCategoriesTableViewController ()
 
 @property (nonatomic) NSArray *categories;
 
@@ -19,21 +19,14 @@
 
 @end
 
-@implementation AVHUGTableViewController
+@implementation AVHUGCategoriesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.object = [[AVHUGObject alloc]init];
     
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-
+    [self setupNavigationBarUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +35,21 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self fetchAPIData];
+}
+
+#pragma mark - setup Navigation Bar UI
+
+- (void)setupNavigationBarUI {
+    
+//    self.navigationItem.title = @"Heads Up!";
+//    
+//    // change the navBar title color to orange http://stackoverflow.com/questions/599405/iphone-navigation-bar-title-text-color
+//    
+//    [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor orangeColor]}];
+//    
+//    // change the back button color to orange
+//    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
+//    
 }
 
 #pragma mark - fetch API Data
@@ -93,13 +101,13 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    AVHUGViewController *vc = segue.destinationViewController;
+    AVHUGCluesViewController *vc = segue.destinationViewController;
     
     NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
     
     NSDictionary *category = [self.categories objectAtIndex:ip.row];
     
-    vc.category = category;    
+    vc.category = category;
 }
 
 @end

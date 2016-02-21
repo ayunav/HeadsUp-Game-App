@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-898" y="35"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Categories Table View Controller-->
         <scene sceneID="lxm-4e-jia">
             <objects>
-                <tableViewController id="sBI-kd-vKm" customClass="AVHUGTableViewController" sceneMemberID="viewController">
+                <tableViewController id="sBI-kd-vKm" customClass="AVHUGCategoriesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FxO-zh-Gcb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="P1P-1r-ncv"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="" id="P1P-1r-ncv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="-252" y="30"/>
         </scene>
-        <!--View Controller-->
+        <!--Clues View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AVHUGViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AVHUGCluesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -66,23 +66,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2H-iz-Ikw">
-                                <rect key="frame" x="45" y="289" width="510" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2H-iz-Ikw">
+                                <rect key="frame" x="45" y="240" width="510" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="NGQ-ga-zVH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="38"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpD-q7-rBV">
+                                <rect key="frame" x="279" y="89" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QpD-q7-rBV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="1vo-29-NCU"/>
                             <constraint firstItem="r2H-iz-Ikw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="3wX-dU-FV7"/>
                             <constraint firstItem="r2H-iz-Ikw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6IO-4S-RCy"/>
                             <constraint firstItem="r2H-iz-Ikw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C3i-ZL-6RO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r2H-iz-Ikw" secondAttribute="trailing" constant="25" id="Cpp-ID-bNy"/>
+                            <constraint firstItem="QpD-q7-rBV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rOW-1f-fkE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="subjectLabel" destination="r2H-iz-Ikw" id="63e-XN-wBA"/>
+                        <outlet property="subjectLabel" destination="r2H-iz-Ikw" id="awc-ER-rAn"/>
+                        <outlet property="timerLabel" destination="QpD-q7-rBV" id="hnr-lV-HgY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
