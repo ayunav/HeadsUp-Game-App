@@ -10,4 +10,6 @@
 
 @interface AVHUGViewController : UIViewController
 
+@property (nonatomic) NSDictionary *category; 
+
 @end

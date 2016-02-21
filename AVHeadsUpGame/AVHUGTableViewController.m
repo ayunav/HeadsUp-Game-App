@@ -7,11 +7,14 @@
 //
 
 #import "AVHUGTableViewController.h"
+#import "AVHUGViewController.h"
 #import "AVHUGAPIManager.h"
+
 
 @interface AVHUGTableViewController ()
 
-@property (nonatomic) NSArray *topics;
+@property (nonatomic) NSArray *categories;
+
 @property (nonatomic) AVHUGObject *object;
 
 @end
@@ -35,7 +38,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,19 +48,20 @@
 
 - (void)fetchAPIData {
     
-    self.topics = [[NSArray alloc]init];
+    // an array of dictionaries
+    self.categories = [[NSArray alloc]init];
 
     [AVHUGAPIManager getData:^(NSArray *data) {
  
-        self.topics = data;
+        self.categories = data;
         
-        NSLog(@"self.topics after fetching api data is %@", self.topics);
-        NSLog(@"self.topics count is %ld", self.topics.count);
+        NSLog(@"self.categories after fetching api data is %@", self.categories);
+        NSLog(@"self.categories count is %ld", self.categories.count);
         
-//        for (NSDictionary *topic in self.topics) {
-//            self.object.title = topic[@"title"];
-//            self.object.subjects = topic[@"subjects"];
-//        }
+        for (NSDictionary *category in self.categories) {
+            self.object.title = category[@"title"];
+            self.object.subjects = category[@"subjects"];
+        }
         
         [self.tableView reloadData];
     
@@ -73,35 +76,30 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.topics.count;
+    return self.categories.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopicTitleCellIdentifier" forIndexPath:indexPath];
     
-    NSDictionary *topic = self.topics[indexPath.row];
-    NSString *title = topic[@"title"];
+    NSDictionary *category = self.categories[indexPath.row];
+    NSString *title = category[@"title"];
     cell.textLabel.text = title;
-    
-    
-//    for (NSDictionary *topic in self.topics) {
-//        self.object.title = topic[@"title"];
-//        self.object.subjects = topic[@"subjects"];
-//        cell.textLabel.text = topic[@"title"][indexPath.row];
-//    }
     
     return cell;
 }
 
-/*
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    AVHUGViewController *vc = segue.destinationViewController;
+    
+    NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
+    
+    NSDictionary *category = [self.categories objectAtIndex:ip.row];
+    
+    vc.category = category;    
 }
-*/
 
 @end

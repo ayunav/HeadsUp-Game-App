@@ -11,6 +11,6 @@
 @interface AVHUGObject : NSObject
 
 @property (nonatomic) NSString *title;
-@property (nonatomic) NSArray *subjects;
+@property (nonatomic) NSArray<NSString *> *subjects;
 
 @end

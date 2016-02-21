@@ -10,13 +10,17 @@
 
 @interface AVHUGViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
+
 @end
 
 @implementation AVHUGViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.subjectLabel.text = self.category[@"subjects"][0];
+
 }
 
 - (void)didReceiveMemoryWarning {
