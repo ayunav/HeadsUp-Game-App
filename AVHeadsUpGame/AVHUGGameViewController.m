@@ -61,7 +61,7 @@
     
     NSTimer *getReadyTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(getReadyTimerFired:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:getReadyTimer forMode:NSRunLoopCommonModes];
-    self.timerCount = 5;
+    self.timerCount = 3;
     [getReadyTimer fire];
 }
 
@@ -85,7 +85,7 @@
 {
     NSTimer *gameTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(gameTimerFired:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:gameTimer forMode:NSRunLoopCommonModes];
-    self.gameTimerCount = 60;
+    self.gameTimerCount = 15;
     [gameTimer fire];
     
     self.index = 0;
