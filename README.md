@@ -3,7 +3,7 @@ Simple iOS app implementation of the Heads Up game.
 
 If you're unfamiliar with the game, please refer to the following video: https://www.youtube.com/watch?v=PO_ezpX7DwY (Ellen Degeneres came up with the game). 
 
-**Features**
+**How it works**
 
 This app consists of a UITableViewController that displays a list of game topics pulled from the public API [link](https://heads-up-api.herokuapp.com) and a UIViewController where the main game action takes place. 
 
@@ -13,7 +13,7 @@ When the timer is up, the app lets the user know how many answers they got right
 
  
  
-**Technical Implementation**
+**Technical Features**
 
 
 1) UITableViewController    
