@@ -224,6 +224,25 @@
 - (void)showNextClue
 {
     self.view.backgroundColor = self.twitterBlue;
+    
+    if (self.index > self.subjects.count-1) {
+        self.subjectLabel.text = @"GAME'S OVER";
+        self.view.backgroundColor = self.twitterBlue;
+        
+        // show UIAlertController with game score
+        NSString *gameResult = [NSString stringWithFormat:@"You guessed %ld/%ld", self.cluesCountGuessedRight, self.cluesCount];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Final Score"
+                                                                       message:gameResult
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"👍"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:nil];
+        [alert addAction:ok];
+        [self presentViewController:alert
+                           animated:YES
+                         completion:nil];
+    }
+    
     self.subjectLabel.text = self.category[@"subjects"][self.index];
 }
 
