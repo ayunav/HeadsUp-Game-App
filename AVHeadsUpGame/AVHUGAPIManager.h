@@ -6,7 +6,6 @@
 //  Copyright © 2016 Ayuna Vogel. All rights reserved.
 //
 #import <AFNetworking/AFNetworking.h>
-
 #import <Foundation/Foundation.h>
 
 @interface AVHUGAPIManager : NSObject

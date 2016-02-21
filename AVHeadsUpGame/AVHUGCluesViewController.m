@@ -172,7 +172,7 @@
     self.subjectLabel.text = @"TIME'S UP";
     self.view.backgroundColor = self.fiveHundredPxRed;
     
-    // show UIAlertController with results of the game
+    // show UIAlertController with game score
     NSString *gameResult = [NSString stringWithFormat:@"You guessed %ld/%ld", self.cluesCountGuessedRight, self.cluesCount];
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Final Score"
                                                                    message:gameResult
@@ -205,10 +205,14 @@
 {
     switch (gesture.direction) {
         case UISwipeGestureRecognizerDirectionLeft: // guessed correct
-            [self startCorrectTimer];
+            if (self.gameTimerCount >= 2) {
+                [self startCorrectTimer];
+            }
             break;
         case UISwipeGestureRecognizerDirectionRight: // guessed wrong
-            [self startPassTimer];
+            if (self.gameTimerCount >= 2) {
+                [self startPassTimer];
+            }
             break;
         default:
             return;

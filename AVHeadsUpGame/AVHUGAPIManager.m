@@ -8,12 +8,14 @@
 
 #import "AVHUGAPIManager.h"
 
+#define APIdataURL @"https://heads-up-api.herokuapp.com"
+
 @implementation AVHUGAPIManager
 
 + (void)getData:(void(^)(NSArray *data))completion {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    [manager GET:@"https://heads-up-api.herokuapp.com" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:APIdataURL parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         //NSLog(@"ResponseObject is %@", responseObject);
         
