@@ -18,6 +18,8 @@
 @property (nonatomic) NSInteger cluesCount;
 @property (nonatomic) NSInteger cluesCountGuessedRight;
 @property (nonatomic) NSInteger timerCount;
+@property (nonatomic) NSInteger gameTimerCount;
+
 @property (nonatomic) NSInteger index;
 
 // http://brandcolors.net
@@ -28,7 +30,8 @@
 
 @implementation AVHUGCluesViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.twitterBlue = [UIColor colorWithRed:85.00/255.0 green:172.00/255.0 blue:238.00/255.0 alpha:1.0];
@@ -45,13 +48,15 @@
     [self startGetReadyTimer];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Get Ready timer setup
 
-- (void)startGetReadyTimer {
+- (void)startGetReadyTimer
+{
     self.view.backgroundColor = self.twitterBlue;
     self.subjectLabel.text = @"GET READY";
     
@@ -61,25 +66,9 @@
     [getReadyTimer fire];
 }
 
-#pragma mark - GameTimer setup 
-
-- (void)startGameTimer {
-    NSTimer *gameTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(gameTimerFired:) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:gameTimer forMode:NSRunLoopCommonModes];
-    self.timerCount = 60;
-    [gameTimer fire];
+- (void)getReadyTimerFired:(NSTimer *)timer
+{
     
-    self.index = 0;
-    self.subjectLabel.text = self.category[@"subjects"][self.index];
-
-    [self setupGestureRecognizers];
-    
-}
-
-#pragma mark - Timer Methods 
-
-- (void)getReadyTimerFired:(NSTimer *)timer {
-   
     if (self.timerCount == 0) {
         [timer invalidate];
         [self startGameTimer];
@@ -91,20 +80,95 @@
     self.timerCount--;
 }
 
-- (void)gameTimerFired:(NSTimer *)timer {
+#pragma mark - Start Game timer setup
+
+- (void)startGameTimer
+{
+    NSTimer *gameTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(gameTimerFired:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:gameTimer forMode:NSRunLoopCommonModes];
+    self.gameTimerCount = 60;
+    [gameTimer fire];
+    
+    self.index = 0;
+    self.subjectLabel.text = self.category[@"subjects"][self.index];
+
+    [self setupGestureRecognizers];
+}
+
+- (void)gameTimerFired:(NSTimer *)timer
+{
+    
+    if (self.gameTimerCount == 0) {
+        [timer invalidate];
+        [self timeIsUp];
+    }
+    
+    NSString *convertTimerCountToString = [[NSNumber numberWithInteger:self.gameTimerCount]stringValue];
+    self.timerLabel.text = convertTimerCountToString;
+    
+    self.gameTimerCount--;
+}
+
+#pragma mark - Correct Timer setup 
+
+- (void)startCorrectTimer
+{
+    NSTimer *correctTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(correctTimerFired:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:correctTimer forMode:NSRunLoopCommonModes];
+    self.timerCount = 1;
+    [correctTimer fire];
+    
+
+    self.view.backgroundColor = [UIColor greenColor];
+    self.cluesCountGuessedRight++;
+    self.cluesCount++;
+    self.index++;
+    self.subjectLabel.text = @"CORRECT";
+}
+
+- (void)correctTimerFired:(NSTimer *)timer
+{
     
     if (self.timerCount == 0) {
         [timer invalidate];
-        [self timeIsUp]; 
+        self.gameTimerCount -= 1;
+        [self showNextClue];
+        [self setupGestureRecognizers];
     }
-    
-    NSString *convertTimerCountToString = [[NSNumber numberWithInteger:self.timerCount]stringValue];
-    self.timerLabel.text = convertTimerCountToString;
-    
     self.timerCount--;
 }
 
-- (void)timeIsUp {
+#pragma mark - Pass Timer setup
+
+- (void)startPassTimer
+{
+    NSTimer *passTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(passTimerFired:) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:passTimer forMode:NSRunLoopCommonModes];
+    self.timerCount = 1;
+    [passTimer fire];
+
+    self.view.backgroundColor = [UIColor orangeColor];
+    self.cluesCount++;
+    self.index++;
+    self.subjectLabel.text = @"PASS";
+}
+
+- (void)passTimerFired:(NSTimer *)timer
+{
+    
+    if (self.timerCount == 0) {
+        [timer invalidate];
+        self.gameTimerCount -= 1;
+        [self showNextClue];
+        [self setupGestureRecognizers];
+    }
+    self.timerCount--;
+}
+
+#pragma mark - Time is Up
+
+- (void)timeIsUp
+{
     self.subjectLabel.text = @"TIME'S UP";
     self.view.backgroundColor = self.fiveHundredPxRed;
     
@@ -113,7 +177,7 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Final Score"
                                                                    message:gameResult
                                                             preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"👍"
                                                  style:UIAlertActionStyleDefault
                                                handler:nil];
     [alert addAction:ok];
@@ -122,7 +186,10 @@
                      completion:nil];
 }
 
-- (void)setupGestureRecognizers {
+#pragma mark - Swipe Gesture Recognition Methods
+
+- (void)setupGestureRecognizers
+{
     UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipe:)];
     left.direction = UISwipeGestureRecognizerDirectionLeft;
     
@@ -131,31 +198,27 @@
     
     [self.view addGestureRecognizer:left];
     [self.view addGestureRecognizer:right];
+
 }
 
-- (void)handleSwipe:(UISwipeGestureRecognizer *)gesture {
-    
+- (void)handleSwipe:(UISwipeGestureRecognizer *)gesture
+{
     switch (gesture.direction) {
         case UISwipeGestureRecognizerDirectionLeft: // guessed correct
-            self.view.backgroundColor = [UIColor greenColor];
-            self.cluesCountGuessedRight++;
-            self.cluesCount++;
-            self.index++;
-            self.subjectLabel.text = @"CORRECT";
+            [self startCorrectTimer];
             break;
         case UISwipeGestureRecognizerDirectionRight: // guessed wrong
-            self.view.backgroundColor = [UIColor orangeColor];
-            self.cluesCount++;
-            self.index++;
-            self.subjectLabel.text = @"PASS";
+            [self startPassTimer];
             break;
         default:
             return;
     }
-    
 }
 
-- (void)showNextClue {
+#pragma mark ShowNextClue method
+
+- (void)showNextClue
+{
     self.view.backgroundColor = self.twitterBlue;
     self.subjectLabel.text = self.category[@"subjects"][self.index];
 }
