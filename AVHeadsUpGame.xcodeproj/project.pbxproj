@@ -13,7 +13,7 @@
 		29FDE2FB1C7A0DCA002DC7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29FDE2FA1C7A0DCA002DC7BB /* Assets.xcassets */; };
 		29FDE2FE1C7A0DCA002DC7BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FDE2FC1C7A0DCA002DC7BB /* LaunchScreen.storyboard */; };
 		29FDE3071C7A19E1002DC7BB /* AVHUGCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE3061C7A19E1002DC7BB /* AVHUGCategoriesTableViewController.m */; };
-		29FDE30A1C7A1A16002DC7BB /* AVHUGCluesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE3091C7A1A16002DC7BB /* AVHUGCluesViewController.m */; };
+		29FDE30A1C7A1A16002DC7BB /* AVHUGGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE3091C7A1A16002DC7BB /* AVHUGGameViewController.m */; };
 		29FDE30D1C7A1A5E002DC7BB /* AVHUGAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE30C1C7A1A5E002DC7BB /* AVHUGAPIManager.m */; };
 		29FDE3101C7A251A002DC7BB /* AVHUGObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FDE30F1C7A251A002DC7BB /* AVHUGObject.m */; };
 		824B7813614710F5FB6DE036 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9BADA0DDE22C698FF454F2A /* libPods.a */; };
@@ -31,8 +31,8 @@
 		29FDE2FF1C7A0DCA002DC7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29FDE3051C7A19E1002DC7BB /* AVHUGCategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGCategoriesTableViewController.h; sourceTree = "<group>"; };
 		29FDE3061C7A19E1002DC7BB /* AVHUGCategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHUGCategoriesTableViewController.m; sourceTree = "<group>"; };
-		29FDE3081C7A1A16002DC7BB /* AVHUGCluesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGCluesViewController.h; sourceTree = "<group>"; };
-		29FDE3091C7A1A16002DC7BB /* AVHUGCluesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHUGCluesViewController.m; sourceTree = "<group>"; };
+		29FDE3081C7A1A16002DC7BB /* AVHUGGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGGameViewController.h; sourceTree = "<group>"; };
+		29FDE3091C7A1A16002DC7BB /* AVHUGGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHUGGameViewController.m; sourceTree = "<group>"; };
 		29FDE30B1C7A1A5E002DC7BB /* AVHUGAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGAPIManager.h; sourceTree = "<group>"; };
 		29FDE30C1C7A1A5E002DC7BB /* AVHUGAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVHUGAPIManager.m; sourceTree = "<group>"; };
 		29FDE30E1C7A251A002DC7BB /* AVHUGObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVHUGObject.h; sourceTree = "<group>"; };
@@ -83,8 +83,8 @@
 				29FDE30C1C7A1A5E002DC7BB /* AVHUGAPIManager.m */,
 				29FDE3051C7A19E1002DC7BB /* AVHUGCategoriesTableViewController.h */,
 				29FDE3061C7A19E1002DC7BB /* AVHUGCategoriesTableViewController.m */,
-				29FDE3081C7A1A16002DC7BB /* AVHUGCluesViewController.h */,
-				29FDE3091C7A1A16002DC7BB /* AVHUGCluesViewController.m */,
+				29FDE3081C7A1A16002DC7BB /* AVHUGGameViewController.h */,
+				29FDE3091C7A1A16002DC7BB /* AVHUGGameViewController.m */,
 				29FDE2FA1C7A0DCA002DC7BB /* Assets.xcassets */,
 				29FDE2FC1C7A0DCA002DC7BB /* LaunchScreen.storyboard */,
 				29FDE2FF1C7A0DCA002DC7BB /* Info.plist */,
@@ -243,7 +243,7 @@
 				29FDE30D1C7A1A5E002DC7BB /* AVHUGAPIManager.m in Sources */,
 				29FDE3101C7A251A002DC7BB /* AVHUGObject.m in Sources */,
 				29FDE2F01C7A0DCA002DC7BB /* main.m in Sources */,
-				29FDE30A1C7A1A16002DC7BB /* AVHUGCluesViewController.m in Sources */,
+				29FDE30A1C7A1A16002DC7BB /* AVHUGGameViewController.m in Sources */,
 				29FDE3071C7A19E1002DC7BB /* AVHUGCategoriesTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

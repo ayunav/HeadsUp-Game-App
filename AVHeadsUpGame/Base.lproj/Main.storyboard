@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="-252" y="30"/>
         </scene>
-        <!--Clues View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AVHUGCluesViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AVHUGGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

@@ -1,14 +1,14 @@
 //
-//  AVHUGCluesViewController.m
+//  AVHUGGameViewController.m
 //  AVHeadsUpGame
 //
 //  Created by Ayuna Vogel on 2/21/16.
 //  Copyright © 2016 Ayuna Vogel. All rights reserved.
 //
 
-#import "AVHUGCluesViewController.h"
+#import "AVHUGGameViewController.h"
 
-@interface AVHUGCluesViewController ()
+@interface AVHUGGameViewController ()
 
 @property (nonatomic) NSArray *subjects;
 
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation AVHUGCluesViewController
+@implementation AVHUGGameViewController
 
 - (void)viewDidLoad
 {
@@ -39,11 +39,10 @@
 
     self.subjects = [[NSArray alloc]init];
     self.subjects = self.category[@"subjects"];
-    NSLog(@"subjects.count in CluesViewController is %ld", self.subjects.count);
+    NSLog(@"subjects.count in GameViewController is %ld", self.subjects.count);
     
     self.cluesCount = 0;
     self.cluesCountGuessedRight = 0;
-    
     
     [self startGetReadyTimer];
 }
@@ -226,21 +225,7 @@
     self.view.backgroundColor = self.twitterBlue;
     
     if (self.index > self.subjects.count-1) {
-        self.subjectLabel.text = @"GAME'S OVER";
-        self.view.backgroundColor = self.twitterBlue;
-        
-        // show UIAlertController with game score
-        NSString *gameResult = [NSString stringWithFormat:@"You guessed %ld/%ld", self.cluesCountGuessedRight, self.cluesCount];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Final Score"
-                                                                       message:gameResult
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"👍"
-                                                     style:UIAlertActionStyleDefault
-                                                   handler:nil];
-        [alert addAction:ok];
-        [self presentViewController:alert
-                           animated:YES
-                         completion:nil];
+        [self timeIsUp];
     }
     
     self.subjectLabel.text = self.category[@"subjects"][self.index];

@@ -7,7 +7,7 @@
 //
 
 #import "AVHUGCategoriesTableViewController.h"
-#import "AVHUGCluesViewController.h"
+#import "AVHUGGameViewController.h"
 #import "AVHUGAPIManager.h"
 
 
@@ -95,7 +95,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    AVHUGCluesViewController *vc = segue.destinationViewController;
+    AVHUGGameViewController *vc = segue.destinationViewController;
     
     NSIndexPath *ip = [self.tableView indexPathForSelectedRow];
     

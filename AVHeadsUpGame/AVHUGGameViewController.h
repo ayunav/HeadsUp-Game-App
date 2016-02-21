@@ -1,5 +1,5 @@
 //
-//  AVHUGCluesViewController.h
+//  AVHUGGameViewController.h
 //  AVHeadsUpGame
 //
 //  Created by Ayuna Vogel on 2/21/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AVHUGCluesViewController : UIViewController
+@interface AVHUGGameViewController : UIViewController
 
 @property (nonatomic) NSDictionary *category; 
 
