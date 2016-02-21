@@ -41,15 +41,9 @@
 
 - (void)setupNavigationBarUI {
     
-//    self.navigationItem.title = @"Heads Up!";
-//    
-//    // change the navBar title color to orange http://stackoverflow.com/questions/599405/iphone-navigation-bar-title-text-color
-//    
-//    [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor orangeColor]}];
-//    
-//    // change the back button color to orange
-//    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
-//    
+    self.navigationItem.title = @"Heads Up!";
+    
+    [self.navigationController.navigationBar setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor colorWithRed:85.00/255.0 green:172.00/255.0 blue:238.00/255.0 alpha:1.0]}];
 }
 
 #pragma mark - fetch API Data
