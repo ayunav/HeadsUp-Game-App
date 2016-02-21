@@ -23,6 +23,7 @@ When the timer is up, the app lets the user know how many answers they got right
 4) NSTimer     
 3) UISwipeGestureRecognizer    
 
+![gif]()
 
 
 
