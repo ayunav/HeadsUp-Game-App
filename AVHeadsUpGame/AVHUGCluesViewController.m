@@ -95,11 +95,7 @@
     
     if (self.timerCount == 0) {
         [timer invalidate];
-        self.subjectLabel.text = @"TIME'S UP";
-        self.view.backgroundColor = self.fiveHundredPxRed;
-        
-        // show ui alert view controller with results of the game
-        //        @"%ld/%ld", self.cluesCountGuessedRight, self.cluesCount;
+        [self timeIsUp]; 
     }
     
     NSString *convertTimerCountToString = [[NSNumber numberWithInteger:self.timerCount]stringValue];
@@ -108,6 +104,23 @@
     self.timerCount--;
 }
 
+- (void)timeIsUp {
+    self.subjectLabel.text = @"TIME'S UP";
+    self.view.backgroundColor = self.fiveHundredPxRed;
+    
+    // show UIAlertController with results of the game
+    NSString *gameResult = [NSString stringWithFormat:@"You guessed %ld/%ld", self.cluesCountGuessedRight, self.cluesCount];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Final Score"
+                                                                   message:gameResult
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:nil];
+    [alert addAction:ok];
+    [self presentViewController:alert
+                       animated:YES
+                     completion:nil];
+}
 
 - (void)setupGestureRecognizers {
     UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handleSwipe:)];
