@@ -15,12 +15,12 @@ When the timer is up, the app lets the user know how many answers they got right
 
 
 * UITableViewController    
+* UIAlertController
+* UISwipeGestureRecognizer 
+* NSTimer     
 * CocoaPods  
 * AFNetworking  
 * API   
-* NSTimer     
-* UISwipeGestureRecognizer 
-* UIAlertController
 
 ![gif](https://github.com/ayunav/HeadsUp-Game-App/blob/master/HeadsUpGame.gif)
 
