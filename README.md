@@ -1,7 +1,5 @@
 # Heads Up game iOS app
-Simple iOS app implementation of the Heads Up game. 
-
-If you're unfamiliar with the game, please refer to the following video: https://youtu.be/PO_ezpX7DwY The game was first presented in the Ellen Degeneres show who launched the original Heads Up game app. 
+This is a simple iOS app implementation of the Ellen Degeneres classic, Heads Up! If you're unfamiliar with the game, please refer to the following video: https://youtu.be/PO_ezpX7DwY  
 
 **How It Works**
 
@@ -21,7 +19,8 @@ When the timer is up, the app lets the user know how many answers they got right
 3) AFNetworking  
 4) API   
 5) NSTimer     
-6) UISwipeGestureRecognizer    
+6) UISwipeGestureRecognizer 
+7) UIAlertController
 
 ![gif](https://github.com/ayunav/HeadsUp-Game-App/blob/master/HeadsUpGame.gif)
 
