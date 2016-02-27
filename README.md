@@ -22,6 +22,10 @@ When the timer is up, the app lets the user know how many answers they got right
 * AFNetworking  
 * API   
 
+
+Colors are Twitter blue (Hex value: 55acee) and 500px red (Hex value: ff4c4c) from [brandcolors.net](http://brandcolors.net/) ♥️
+
+
 ![gif](https://github.com/ayunav/HeadsUp-Game-App/blob/master/HeadsUpGame.gif)
 
 
